@@ -1,8 +1,8 @@
 {
-  "name": "task-wall",
+  "name": "",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "sushishun",
+  "author": "",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --display-error-details --progress --config  build/webpack.dev.conf.js ",

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, user-scalable=no">
+    <title></title>
+    <!--<link rel="dns-prefetch" href="http://f1.webshare.mob.com">-->
+    <!--<base href="<%= application.base %>" />-->
+    <!--<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=a85f8007e044" defer></script>-->
+    <!--<script  type="text/javascript" src="<%= application.base %>static/js/ShareSDK.js" defer></script>-->
+  </head>
+  <body>
+  <script>
+    var taskActiveShowNum
+    setTimeout(function () {
+      taskActiveShowNum = localStorage.getItem('taskActiveShowNum') || 0
+      taskActiveShowNum == 0 && localStorage.setItem('taskActiveShowNum', 1)
+    }, 20)
+  </script>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+<!--<script>-->
+  <!--var token = getQueryString('token')-->
+  <!--var glQue = null-->
+  <!--if(token && getQueryString('login')){-->
+    <!--var localToken = localStorage.getItem('token')-->
+    <!--if(token != localToken){-->
+      <!--localStorage.removeItem('login')-->
+    <!--}else{-->
+      <!--if ('fetch' in window) {-->
+        <!--var taskUrl = '/index.php?g=api/mission&m=index&a=mission_list'-->
+        <!--var signWeekUrl = '/index.php?g=api/mission&m=clock&a=weeks&id=2'-->
+        <!--glQue = {-->
+          <!--taskFn: null,-->
+          <!--signWeekFn: null,-->
+          <!--task: null,-->
+          <!--signWeek: null-->
+        <!--}-->
+        <!--fetchFn(taskUrl, function (data) {-->
+          <!--glQue.task = data-->
+          <!--glQue.taskFn && glQue.taskFn(data)-->
+        <!--})-->
+        <!--fetchFn(signWeekUrl, function (data) {-->
+          <!--glQue.signWeek = data-->
+          <!--glQue.signWeekFn && glQue.signWeekFn(data)-->
+        <!--})-->
+      <!--}-->
+    <!--}-->
+  <!--}-->
+
+
+
+  <!--function getQueryString (name) {-->
+    <!--var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')-->
+    <!--var r = window.location.hash.substr(3).match(reg)-->
+    <!--if (r != null)-->
+      <!--return(r[2])-->
+    <!--return null-->
+  <!--}-->
+
+  <!--function fetchFn (url, cb) {-->
+    <!--var myHeaders = new Headers();-->
+    <!--myHeaders.append("Content-Type", "text/plain");-->
+    <!--myHeaders.append('Accept', 'application/json, text/plain, */*');-->
+    <!--fetch(url, {-->
+      <!--credentials: 'same-origin',-->
+      <!--headers:myHeaders-->
+    <!--}).then(function (data) {-->
+      <!--data.json().then(function (json) {-->
+        <!--if(json.status == 1){-->
+          <!--cb(json.data)-->
+        <!--}else if(json.status == 1021){-->
+          <!--localStorage.removeItem('login')-->
+        <!--}-->
+
+      <!--})-->
+    <!--})-->
+  <!--}-->
+
+<!--</script>-->
+
+<!--// var uid = getQueryString('uid')-->
+<!--// var loginUrl = '/index.php?g=api/mission&m=index&a=login&uid=' + uid + '&token=' + token-->
+<!--// fetchFn(loginUrl, function () {-->
+<!--//   localStorage.setItem('login', 'true')-->
+<!--//   localStorage.setItem('uid', uid)-->
+<!--//   localStorage.setItem('token', token)-->
+<!--// })-->
+<!--// function getStorageObj (key) {-->
+<!--//   var json = localStorage.getItem(key)-->
+<!--//   if(json){-->
+<!--//     json = JSON.parse(json)-->
+<!--//   }-->
+<!--//   return json-->
+<!--// }-->
+
+<!--// if(!localTaskList){-->
+<!--//   localSignWeek = getStorageObj('signWeek')-->
+<!--//   localTaskList = getStorageObj('taskList')-->
+<!--//   setTimeout(function () {-->
+<!--//     localSignWeek = getStorageObj('signWeek')-->
+<!--//     localTaskList = getStorageObj('taskList')-->
+<!--//   }, 40)-->
+<!--//-->
+<!--// }-->
+
+<!--// // if('fetch' in window && sessionStorage.getItem('login') != 'true') {-->
+<!--//   if ('fetch' in window) {-->
+<!--//     var host = '<%= process.env.NODE_ENV  %>'== 'development' ? '/index.php' : 'http://h5.zimuzu.io/index.php'-->
+<!--//     var lgUrl = host + '?g=api/mission&m=index&a=login&uid=' + getQueryString('uid') + '&token=' + getQueryString('token')-->
+<!--//     var myHeaders = new Headers();-->
+<!--//     myHeaders.append("Content-Type", "text/plain");-->
+<!--//     myHeaders.append('Accept', 'application/json, text/plain, */*');-->
+<!--//     fetch(lgUrl, {-->
+<!--//       credentials: 'same-origin',-->
+<!--//       headers:myHeaders-->
+<!--//     }).then(data => {-->
+<!--//       debugger-->
+<!--//       data.json().then(json=>{-->
+<!--//         if(json.status == 1){-->
+<!--//           sessionStorage.setItem('login', 'true')-->
+<!--//         }-->
+<!--//       })-->
+<!--//-->
+<!--//     })-->
+<!--//   }-->
+<!--// //}-->
